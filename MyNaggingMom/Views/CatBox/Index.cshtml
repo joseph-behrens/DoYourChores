@@ -6,3 +6,21 @@
 
 <h2>Cat Box</h2>
 
+<table class="table-responsive">
+    <tr>
+        <th>
+            Time the cat box was last cleaned: 
+        </th>
+        <td>
+            @Model.LastTimeCleaned.ToString("f")
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Deadline for the next cleaning: 
+        </th>
+        <td>
+            @Model.TimeToCleanAgain.ToString("f")
+        </td>
+    </tr>
+</table>

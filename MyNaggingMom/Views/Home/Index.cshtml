@@ -5,7 +5,7 @@
 <div class="jumbotron">
     <h1>Cat Box Reminder</h1>
     <p class="lead">The goal of this project is for a text to send a reminder when a cat box needs to be cleaned. If the text is ignored you get more texts at an increasing rate until the box is marked clean.</p>
-    <p><a href="/CatBox/Clean" class="btn btn-primary btn-lg">Clean the Cat Box &raquo;</a></p>
+    <p>@Html.ActionLink(HttpUtility.HtmlDecode("Check the Cat Box &raquo;"), "Index", "CatBox", null, new { @class = "btn btn-primary btn-lg" })    @Html.ActionLink(HttpUtility.HtmlDecode("Clean the Cat Box &raquo;"), "Clean", "CatBox", null, new { @class = "btn btn-primary btn-lg" })</p>
 </div>
 
 @*<div class="row">

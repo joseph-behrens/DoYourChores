@@ -1,4 +1,4 @@
-﻿@model MyNaggingMom.Models.CatBox
+﻿
 
 @{
     ViewBag.Title = "Clean";
@@ -9,11 +9,11 @@
 
 <table>
     <tr>
+        <th>
+            Deadline for the next cleaning: 
+        </th>
         <td>
-            <b>Deadline for the next cleaning: </b>
-        </td>
-        <td>
-            @Model.TimeToCleanAgain
+            @Model.TimeToCleanAgain.ToString("f")
         </td>
     </tr>
 </table>

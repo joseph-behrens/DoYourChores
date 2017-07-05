@@ -9,10 +9,30 @@ namespace MyNaggingMom.Controllers
 {
     public class CatBoxController : Controller
     {
-        private CatBox catBox = new CatBox();
-        
-        public ActionResult Clean(CatBox catBox)
+        private ApplicationDbContext _context;
+
+        public CatBoxController()
         {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
+        public ActionResult Clean()
+        {
+            var catBox = _context.CatBox.SingleOrDefault(c => c.Id == 2);
+            catBox.LastTimeCleaned = DateTime.Now;
+            catBox.TimeToCleanAgain = DateTime.Now.AddDays(1);
+            _context.SaveChanges();
+            return View(catBox);
+        }
+
+        public ActionResult Index()
+        {
+            var catBox = _context.CatBox.SingleOrDefault(c => c.Id == 2);
             return View(catBox);
         }
     }
