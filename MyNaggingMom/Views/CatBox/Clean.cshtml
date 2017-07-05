@@ -13,7 +13,7 @@
             Deadline for the next cleaning: 
         </th>
         <td>
-            @Model.TimeToCleanAgain.ToString("f")
+            @Model.TimeToCleanAgain.AddHours(-5).ToString("f") CST
         </td>
     </tr>
 </table>

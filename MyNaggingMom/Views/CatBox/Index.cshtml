@@ -12,7 +12,7 @@
             Time the cat box was last cleaned: 
         </th>
         <td>
-            @Model.LastTimeCleaned.ToString("f")
+            @Model.LastTimeCleaned.AddHours(-5).ToString("f") CST
         </td>
     </tr>
     <tr>
@@ -20,7 +20,7 @@
             Deadline for the next cleaning: 
         </th>
         <td>
-            @Model.TimeToCleanAgain.ToString("f")
+            @Model.TimeToCleanAgain.AddHours(-5).ToString("f") CST
         </td>
     </tr>
 </table>

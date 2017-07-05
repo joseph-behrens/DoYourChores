@@ -24,8 +24,8 @@ namespace MyNaggingMom.Controllers
         public ActionResult Clean()
         {
             var catBox = _context.CatBox.SingleOrDefault();
-            catBox.LastTimeCleaned = DateTime.Now;
-            catBox.TimeToCleanAgain = DateTime.Now.AddDays(1);
+            catBox.LastTimeCleaned = DateTime.UtcNow;
+            catBox.TimeToCleanAgain = DateTime.UtcNow.AddDays(1);
             _context.SaveChanges();
             return View(catBox);
         }
