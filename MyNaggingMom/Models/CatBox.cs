@@ -10,13 +10,5 @@ namespace MyNaggingMom.Models
         public int Id { get; set; }
         public DateTime LastTimeCleaned { get; set; }
         public DateTime TimeToCleanAgain { get; set; }
-
-
-        // Constructor
-        public CatBox()
-        {
-            LastTimeCleaned = DateTime.Now;
-            TimeToCleanAgain = LastTimeCleaned.AddDays(1);
-        }
     }
 }

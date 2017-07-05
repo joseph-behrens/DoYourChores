@@ -23,7 +23,7 @@ namespace MyNaggingMom.Controllers
 
         public ActionResult Clean()
         {
-            var catBox = _context.CatBox.SingleOrDefault(c => c.Id == 2);
+            var catBox = _context.CatBox.SingleOrDefault();
             catBox.LastTimeCleaned = DateTime.Now;
             catBox.TimeToCleanAgain = DateTime.Now.AddDays(1);
             _context.SaveChanges();
@@ -32,7 +32,7 @@ namespace MyNaggingMom.Controllers
 
         public ActionResult Index()
         {
-            var catBox = _context.CatBox.SingleOrDefault(c => c.Id == 2);
+            var catBox = _context.CatBox.SingleOrDefault();
             return View(catBox);
         }
     }
