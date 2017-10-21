@@ -25,7 +25,7 @@ namespace DoYourChores.Controllers
         {
             var catBox = _context.CatBox.SingleOrDefault();
             catBox.LastTimeCleaned = DateTime.UtcNow;
-            catBox.TimeToCleanAgain = DateTime.UtcNow.AddDays(1);
+            catBox.TimeToCleanAgain = DateTime.UtcNow.AddDays(2);
             _context.SaveChanges();
             return View(catBox);
         }
