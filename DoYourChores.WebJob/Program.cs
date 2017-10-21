@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DoYourChores.WebJob
 {
@@ -17,7 +13,8 @@ namespace DoYourChores.WebJob
             
             if (deadLine < DateTime.UtcNow)
             {
-                SendText.Twilio(deadLine);
+                SendText.Twilio(deadLine, "+17634427782");
+                SendText.Twilio(deadLine, "+16125999580");
             }
         }
     }
