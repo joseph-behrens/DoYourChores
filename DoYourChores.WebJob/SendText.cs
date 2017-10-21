@@ -17,7 +17,7 @@ namespace DoYourChores.WebJob
             var twilio = new TwilioRestClient(AccountSid, AuthToken);
             var message = twilio.SendMessage(
               "+17632519969", recipient,
-              "Hey jerks!! It's been " + daysSinceCleaning + " days since the cat box was last cleaned! Click the link if it's been cleaned: http://doyourchoresjb.azurewebsites.net/CatBox/Clean</a>",
+              "Hey jerks!! It's been " + daysSinceCleaning + " days since the cat box was last cleaned! Click the link if it's been cleaned: http://doyourchoresjb.azurewebsites.net/CatBox/Clean",
               ""
             );
 
