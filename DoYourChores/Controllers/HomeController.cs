@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DoYourChores.Models;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace DoYourChores.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext _context;
         public ActionResult Index()
         {
-            return View();
+            var catBox = _context.CatBox.SingleOrDefault();
+            catBox.Message = "";
+            return View(catBox);
         }
 
         public ActionResult About()
@@ -25,6 +26,11 @@ namespace DoYourChores.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public HomeController()
+        {
+            _context = new ApplicationDbContext();
         }
     }
 }

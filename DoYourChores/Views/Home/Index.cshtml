@@ -1,31 +1,32 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model DoYourChores.Models.CatBox
+
+@{
+    ViewBag.Title = "Do Your Chores!";
 }
 
 <div class="jumbotron">
-    <h1>Cat Box Reminder</h1>
-    <p class="lead">The goal of this project is for a text to send a reminder when a cat box needs to be cleaned. If the text is ignored you get more texts at an increasing rate until the box is marked clean.</p>
-    <p>@Html.ActionLink(HttpUtility.HtmlDecode("Check the Cat Box &raquo;"), "Index", "CatBox", null, new { @class = "btn btn-primary btn-lg" })    @Html.ActionLink(HttpUtility.HtmlDecode("Clean the Cat Box &raquo;"), "Clean", "CatBox", null, new { @class = "btn btn-primary btn-lg" })</p>
-</div>
+ 
+    <h2>Cat Box</h2>
+    <h2 style="color:green">@Model.Message</h2>
 
-@*<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>*@
+    <table class="table-responsive">
+        <tr>
+            <th>
+                Time the cat box was last cleaned:
+            </th>
+            <td>
+                @Model.LastTimeCleaned.AddHours(-5).ToString("f") CST
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Deadline for the next cleaning:
+            </th>
+            <td>
+                @Model.TimeToCleanAgain.AddHours(-5).ToString("f") CST
+            </td>
+        </tr>
+    </table>
+    <br/>
+    <p>@Html.ActionLink(HttpUtility.HtmlDecode("Clean the Cat Box &raquo;"), "Clean", "CatBox", null, new { @class = "btn btn-primary" })</p>
+</div>

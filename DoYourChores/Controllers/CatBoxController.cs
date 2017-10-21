@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DoYourChores.Models;
+using System;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using DoYourChores.Models;
 
 namespace DoYourChores.Controllers
 {
@@ -27,7 +25,8 @@ namespace DoYourChores.Controllers
             catBox.LastTimeCleaned = DateTime.UtcNow;
             catBox.TimeToCleanAgain = DateTime.UtcNow.AddDays(2);
             _context.SaveChanges();
-            return View(catBox);
+            catBox.Message = "Thank you for cleaning the catbox!";
+            return View("../Home/Index", catBox);
         }
 
         public ActionResult Index()
