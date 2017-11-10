@@ -212,6 +212,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CatBoxController.cs" />
+    <Compile Include="Controllers\ChoresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -229,9 +230,14 @@
     <Compile Include="Migrations\201710211855253_message added.Designer.cs">
       <DependentUpon>201710211855253_message added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711100152142_GenericChores.cs" />
+    <Compile Include="Migrations\201711100152142_GenericChores.Designer.cs">
+      <DependentUpon>201711100152142_GenericChores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CatBox.cs" />
+    <Compile Include="Models\Chore.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -296,6 +302,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Chores\Create.cshtml" />
+    <Content Include="Views\Chores\Delete.cshtml" />
+    <Content Include="Views\Chores\Details.cshtml" />
+    <Content Include="Views\Chores\Edit.cshtml" />
+    <Content Include="Views\Chores\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -325,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710211855253_message added.resx">
       <DependentUpon>201710211855253_message added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711100152142_GenericChores.resx">
+      <DependentUpon>201711100152142_GenericChores.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

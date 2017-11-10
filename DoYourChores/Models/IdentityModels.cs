@@ -30,5 +30,7 @@ namespace DoYourChores.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<DoYourChores.Models.Chore> Chores { get; set; }
     }
 }
