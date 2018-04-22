@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DoYourChores.WebJob
 {
-    class CheckCatBox
+    public class CheckCatBox
     {
         
         public static DateTime GetDeadline()

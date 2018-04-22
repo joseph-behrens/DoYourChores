@@ -14,7 +14,6 @@ namespace DoYourChores.WebJob
             if (deadLine < DateTime.UtcNow)
             {
                 SendText.Twilio(deadLine, "+17634427782");
-                SendText.Twilio(deadLine, "+16125999580");
             }
         }
     }

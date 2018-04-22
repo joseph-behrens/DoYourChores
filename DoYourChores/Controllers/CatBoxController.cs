@@ -23,7 +23,7 @@ namespace DoYourChores.Controllers
         {
             var catBox = _context.CatBox.SingleOrDefault();
             catBox.LastTimeCleaned = DateTime.UtcNow;
-            catBox.TimeToCleanAgain = DateTime.UtcNow.AddDays(2);
+            catBox.TimeToCleanAgain = DateTime.UtcNow.AddDays(4);
             _context.SaveChanges();
             catBox.Message = "Thank you for cleaning the catbox!";
             return View("../Home/Index", catBox);

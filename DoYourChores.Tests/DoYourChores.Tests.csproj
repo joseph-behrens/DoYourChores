@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -91,6 +92,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DoYourChores.WebJob\DoYourChores.WebJob.csproj">
+      <Project>{a6467c5c-b8b8-43d5-9602-2e6a9b5979cf}</Project>
+      <Name>DoYourChores.WebJob</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DoYourChores\DoYourChores.csproj">
       <Project>{11CB08EC-FE29-469B-8A8B-900D3D56673B}</Project>
       <Name>DoYourChores</Name>
