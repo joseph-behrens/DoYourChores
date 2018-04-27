@@ -19,7 +19,7 @@ namespace DoYourChores.WebJob
             using (SqlConnection conn = new SqlConnection())
             {
                 // Create the connectionString
-                conn.ConnectionString = "Server=tcp:doyourchoresjb.database.windows.net,1433;Initial Catalog=chores_db;Persist Security Info=False;User ID=jbsa;Password=Creature99!!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+                conn.ConnectionString = "Server=tcp:doyourchoresjb.database.windows.net,1433;Initial Catalog=chores_db;Persist Security Info=False;User ID=;Password=;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
                 conn.Open();
 
                 // Create the command
